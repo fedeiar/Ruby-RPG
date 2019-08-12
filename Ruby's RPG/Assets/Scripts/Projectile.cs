@@ -6,12 +6,16 @@ public class Projectile : MonoBehaviour
 {
 
     public ParticleSystem HitEffect;
+    public AudioClip cogSound;
 
-    Rigidbody2D rigidbody2d;
+    private Rigidbody2D rigidbody2d;
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,11 +30,12 @@ public class Projectile : MonoBehaviour
     public void Launch(Vector2 direction, float force)
     {
         rigidbody2d.AddForce(direction * force);
+        audioSource.PlayOneShot(cogSound);
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        //we also add a debug log to know what the projectile touch
+        
         EnemyController e = other.collider.GetComponent<EnemyController>();
         if (e != null)
         {

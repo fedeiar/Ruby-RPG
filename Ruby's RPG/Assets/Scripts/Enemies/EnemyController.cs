@@ -10,11 +10,11 @@ public class EnemyController : MonoBehaviour {
     public ParticleSystem smokeEffect;
 
     
-    Rigidbody2D rigidbody2D;
-    Animator animator;
-    float timer;
-    int direction = 1;
-    bool broken;
+    private Rigidbody2D rigidbody2D;
+    private Animator animator;
+    private float timer;
+    private int direction = 1;
+    private bool broken;
     AudioSource walkSound;
 
     // Start is called before the first frame update

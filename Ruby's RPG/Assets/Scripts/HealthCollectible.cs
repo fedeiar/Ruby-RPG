@@ -9,15 +9,15 @@ public class HealthCollectible : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other){
 
-        RubyController controller = other.GetComponent<RubyController>();
+        RubyHealth r_health = other.GetComponent<RubyHealth>();
 
-        if (controller != null){
+        if (r_health != null){
 
-            if (controller.health < RubyController.maxHealth) {
-                controller.ChangeHealth(1);
+            if (r_health.health < RubyHealth.maxHealth) {
+                r_health.ChangeHealth(1);
                 Destroy(gameObject);
 
-                controller.PlaySound(collectedClip);
+                r_health.PlaySound(collectedClip);
             }
         }
     }

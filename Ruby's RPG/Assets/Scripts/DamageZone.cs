@@ -6,11 +6,11 @@ public class DamageZone : MonoBehaviour
 {
     void OnTriggerStay2D(Collider2D other)
     {
-        RubyController controller = other.GetComponent<RubyController>();
+        RubyHealth r_health = other.GetComponent<RubyHealth>();
 
-        if (controller != null)
+        if (r_health != null)
         {
-            controller.ChangeHealth(-1);
+            r_health.ChangeHealth(-1);
         }
     }
 
