@@ -8,27 +8,32 @@ public class EnemyController : MonoBehaviour {
     public bool vertical;
     public float changeTime = 3.0f;
     public ParticleSystem smokeEffect;
-
+    private RubyController Ruby;
     
-    private Rigidbody2D rigidbody2D;
+    private new Rigidbody2D rigidbody2D;
+
+    private Levels ActiveLevel;
     private Animator animator;
     private float timer;
     private int direction = 1;
     private bool broken;
     AudioSource walkSound;
 
+    
     // Start is called before the first frame update
-    void Start(){
-
+    private void Start(){
+       
         rigidbody2D = GetComponent<Rigidbody2D>();
         timer = changeTime;
         animator = GetComponent<Animator>();
         broken = true;
         walkSound = GetComponent<AudioSource>();
+
+        Ruby = GameObject.Find("Ruby").GetComponent<RubyController>();
     }
 
     // Update is called once per frame
-    void Update(){
+    private void Update(){
 
         if (!broken){
             return;
@@ -69,5 +74,13 @@ public class EnemyController : MonoBehaviour {
         animator.SetTrigger("Fixed");
         smokeEffect.Stop();
         walkSound.Stop();
+        ActiveLevel.EnemyFixed();
+
+        Ruby.AddExperience(20f);
+        
+    }
+
+    public void SetActiveLevel(Levels level) {
+        ActiveLevel = level;
     }
 }

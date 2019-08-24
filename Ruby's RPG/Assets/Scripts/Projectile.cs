@@ -33,10 +33,11 @@ public class Projectile : MonoBehaviour
         audioSource.PlayOneShot(cogSound);
     }
 
+    
     void OnCollisionEnter2D(Collision2D other)
     {
         
-        EnemyController e = other.collider.GetComponent<EnemyController>();
+        EnemyController e = other.gameObject.GetComponent<EnemyController>();
         if (e != null)
         {
             e.Fix();
@@ -45,4 +46,9 @@ public class Projectile : MonoBehaviour
         Instantiate(HitEffect, rigidbody2d.position, Quaternion.identity);
         Destroy(gameObject);
     }
+    
+    
+
+
+
 }

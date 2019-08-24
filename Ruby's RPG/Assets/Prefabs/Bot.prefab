@@ -167,6 +167,7 @@ MonoBehaviour:
   vertical: 1
   changeTime: 0.7
   smokeEffect: {fileID: 3733317775114186926}
+  Ruby: {fileID: 486015031598085852, guid: d6bd561ef626a254bb114d6f70d08f2e, type: 3}
 --- !u!82 &8672037724420410013
 AudioSource:
   m_ObjectHideFlags: 0
@@ -275,6 +276,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmokeEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
+        type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9005094394782710138, guid: 1e7135919d09e704db712eae370f9cc1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -328,21 +344,6 @@ PrefabInstance:
     - target: {fileID: 9005094394782710138, guid: 1e7135919d09e704db712eae370f9cc1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
-        type: 3}
-      propertyPath: moveWithTransform
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
-        type: 3}
-      propertyPath: EmissionModule.rateOverDistance.scalar
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

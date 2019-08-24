@@ -7,11 +7,11 @@ public class OptionsMenu : MonoBehaviour
 {
     private AudioSource music;
     private Slider slider;
-   
+    public RubyController Ruby;
+
 
     private void OnEnable() {
-        MusicPlayer mp = MusicPlayer._instance;
-        music = mp.GetComponent<AudioSource>();
+        music = GameObject.Find("BackgroundMusic").GetComponent<AudioSource>();
 
         Debug.Log("enabled slider");
         slider = GameObject.Find("VolumeSlider").GetComponent<Slider>();
@@ -20,5 +20,10 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetVolume(float volume) {
         music.volume = volume;
+    }
+
+    public void DeleteData() {
+        PlayerData data = Ruby.NewRuby();
+        SaveSystem.SavePlayer(data);
     }
 }   
