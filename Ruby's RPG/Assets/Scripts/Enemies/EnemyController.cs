@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour {
     
     // Start is called before the first frame update
     private void Start(){
-       
+        
         rigidbody2D = GetComponent<Rigidbody2D>();
         timer = changeTime;
         animator = GetComponent<Animator>();
@@ -30,6 +30,8 @@ public class EnemyController : MonoBehaviour {
         walkSound = GetComponent<AudioSource>();
 
         Ruby = GameObject.Find("Ruby").GetComponent<RubyController>();
+
+		
     }
 
     // Update is called once per frame

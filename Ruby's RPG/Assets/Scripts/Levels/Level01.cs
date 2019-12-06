@@ -14,6 +14,10 @@ public class Level01 : Levels
             AddEnemy(i, 0, 0);
         }
         
+		foreach (GameObject obj in Object.FindObjectsOfType(typeof(GameObject))){
+			Debug.Log(obj.tag);
+			
+		}
         
     }
 
@@ -23,12 +27,7 @@ public class Level01 : Levels
      
     }
 
-    private void AddEnemy(float x, float y, float z) {
-        Debug.Log("level01");
-        EnemyController inst_bot = Instantiate(Bot, new Vector3(x, y, z), Quaternion.identity);
-        inst_bot.SetActiveLevel(this);
-        enemies++;
-    }
+   
 
     
 }

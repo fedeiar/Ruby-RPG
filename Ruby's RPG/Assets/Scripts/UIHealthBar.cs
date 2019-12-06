@@ -15,13 +15,12 @@ public class UIHealthBar : MonoBehaviour {
     float originalSize;
 
     void Awake() {
-        Debug.Log("HB awake");
         instance = this;
     }
 
     // Start is called before the first frame update
     void Start() {
-        Debug.Log("HB start");
+        
         originalSize = mask.rectTransform.rect.width;
     }
 

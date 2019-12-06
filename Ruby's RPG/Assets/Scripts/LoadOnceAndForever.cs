@@ -17,7 +17,8 @@ public class LoadOnceAndForever : MonoBehaviour
     //we use Awake() so it executes before OnLevelWasLoaded(...)
     void Awake()
     {
-
+        if (false) { 
+}
         if (!DontLoadAgain) {
 
             DontDestroyOnLoad(this.gameObject);

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8672037724420410013}
   m_Layer: 0
   m_Name: Bot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,7 +167,6 @@ MonoBehaviour:
   vertical: 1
   changeTime: 0.7
   smokeEffect: {fileID: 3733317775114186926}
-  Ruby: {fileID: 486015031598085852, guid: d6bd561ef626a254bb114d6f70d08f2e, type: 3}
 --- !u!82 &8672037724420410013
 AudioSource:
   m_ObjectHideFlags: 0

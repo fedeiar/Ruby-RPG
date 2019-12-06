@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - EnemyController
     - HealthCollectible
     - Level01
+    - LoadOnceAndForever
     - MainMenu
     - MusicPlayer
     - NonPlayerCharacter
@@ -12,9 +13,6 @@ ScriptsOnlyBuild:
     - PauseMenu
     - Projectile
     - RubyController
-    - RubyExperience
-    - RubyHealth
-    - RubyWeapon
     - UIHealthBar
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
@@ -55,8 +53,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 4
       Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
     - Class: 28
@@ -65,15 +61,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
-    - Class: 60
-      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
     - Class: 66
       Script: {instanceID: 0}
     - Class: 74
-      Script: {instanceID: 0}
-    - Class: 81
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
@@ -90,8 +82,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9292}
     - Class: 114
-      Script: {instanceID: 9380}
-    - Class: 114
       Script: {instanceID: 9382}
     - Class: 114
       Script: {instanceID: 9388}
@@ -100,49 +90,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9402}
     - Class: 114
-      Script: {instanceID: 9410}
-    - Class: 114
-      Script: {instanceID: 9436}
-    - Class: 114
       Script: {instanceID: 9438}
     - Class: 114
-      Script: {instanceID: 9440}
-    - Class: 114
-      Script: {instanceID: 9722}
-    - Class: 114
-      Script: {instanceID: 9754}
-    - Class: 114
-      Script: {instanceID: 9860}
-    - Class: 114
-      Script: {instanceID: 9868}
-    - Class: 114
-      Script: {instanceID: 9926}
-    - Class: 114
-      Script: {instanceID: 10062}
+      Script: {instanceID: 9924}
     - Class: 114
       Script: {instanceID: 10118}
     - Class: 114
-      Script: {instanceID: 10122}
+      Script: {instanceID: 10290}
     - Class: 114
-      Script: {instanceID: 10288}
-    - Class: 114
-      Script: {instanceID: 10302}
-    - Class: 114
-      Script: {instanceID: 10328}
-    - Class: 114
-      Script: {instanceID: 10364}
-    - Class: 114
-      Script: {instanceID: 10436}
-    - Class: 114
-      Script: {instanceID: 10484}
-    - Class: 114
-      Script: {instanceID: 10768}
-    - Class: 114
-      Script: {instanceID: 10858}
-    - Class: 114
-      Script: {instanceID: 10874}
+      Script: {instanceID: 10486}
     - Class: 114
       Script: {instanceID: 10878}
+    - Class: 114
+      Script: {instanceID: 10882}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -172,15 +132,7 @@ ScriptsOnlyBuild:
     - Class: 1839735485
       Script: {instanceID: 0}
     Assets/Scenes/Level02.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
     - Class: 28
-      Script: {instanceID: 0}
-    - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -201,11 +153,23 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 60
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -224,30 +188,60 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9402}
     - Class: 114
+      Script: {instanceID: 9410}
+    - Class: 114
       Script: {instanceID: 9436}
     - Class: 114
       Script: {instanceID: 9438}
     - Class: 114
+      Script: {instanceID: 9440}
+    - Class: 114
+      Script: {instanceID: 9722}
+    - Class: 114
+      Script: {instanceID: 9754}
+    - Class: 114
       Script: {instanceID: 9844}
     - Class: 114
-      Script: {instanceID: 10188}
+      Script: {instanceID: 9860}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10062}
     - Class: 114
-      Script: {instanceID: 10300}
+      Script: {instanceID: 10122}
     - Class: 114
-      Script: {instanceID: 10464}
+      Script: {instanceID: 10190}
     - Class: 114
-      Script: {instanceID: 10484}
+      Script: {instanceID: 10290}
     - Class: 114
-      Script: {instanceID: 10744}
+      Script: {instanceID: 10302}
     - Class: 114
-      Script: {instanceID: 10822}
+      Script: {instanceID: 10304}
+    - Class: 114
+      Script: {instanceID: 10366}
+    - Class: 114
+      Script: {instanceID: 10438}
+    - Class: 114
+      Script: {instanceID: 10466}
+    - Class: 114
+      Script: {instanceID: 10486}
+    - Class: 114
+      Script: {instanceID: 10746}
+    - Class: 114
+      Script: {instanceID: 10824}
+    - Class: 114
+      Script: {instanceID: 10832}
+    - Class: 114
+      Script: {instanceID: 10862}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -284,7 +278,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 0096552fda9b216fb126ab75c8095870
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OptionsMenu
@@ -302,7 +296,7 @@ ScriptsOnlyBuild:
     className: CinemachineFixedSignal
   - hash:
       serializedVersion: 2
-      Hash: b01fb34a553b293d2b66ed0fd8535c27
+      Hash: 5542f3ae196faef513bb1cda3e74fb10
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyController
@@ -830,12 +824,6 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: 240c1e7c3599ccf964b8059f4dff1380
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: RubyWeapon
-  - hash:
-      serializedVersion: 2
       Hash: 3c2b11a8027702f7fef4a819d8b9191a
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -1022,12 +1010,6 @@ ScriptsOnlyBuild:
     className: CinemachineTouchInputMapper
   - hash:
       serializedVersion: 2
-      Hash: e129ed6443ab724894db77e81ed761fd
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: RubyHealth
-  - hash:
-      serializedVersion: 2
       Hash: 88cc9df3c6fc697bfbeacd24c0d6f2d7
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
@@ -1076,7 +1058,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+      Hash: b12663976b375a311c378dc89dccedc9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RubyController
@@ -1148,12 +1130,6 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: RubyExperience
-  - hash:
-      serializedVersion: 2
       Hash: 5372ed2ce39229b1ac910757999a8be2
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1164,6 +1140,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ColorGradient
+  - hash:
+      serializedVersion: 2
+      Hash: 0096552fda9b216fb126ab75c8095870
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LoadOnceAndForever
   - hash:
       serializedVersion: 2
       Hash: 8649814970b42d345b89944b862453cc
@@ -1229,5 +1211,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Level01.unity
   - Assets/Scenes/Level02.unity
-  playerPath: C:/Users/Fede iar/Desktop/Unity Projects/TDPFinal/Ruby's RPG/Build/Ruby's
-    RPG.exe
+  playerPath: D:/Unity/TDPFinal/Ruby's RPG/Build/Ruby's RPG.exe
