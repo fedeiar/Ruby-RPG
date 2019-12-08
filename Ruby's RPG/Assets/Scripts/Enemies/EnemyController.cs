@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
-    public float speed = 3.0f;
+    private float current_speed = 3.0f;
+	public float speed{
+		get{
+			return current_speed;
+		}
+	}
     public bool vertical;
     public float changeTime = 3.0f;
     public ParticleSystem smokeEffect;
@@ -43,8 +48,7 @@ public class EnemyController : MonoBehaviour {
         
   
         timer -= Time.deltaTime;
-        Console.WriteLine("timer: " + timer);
-
+        
         if (timer < 0) {
             direction = -direction;
             timer = changeTime;
@@ -85,4 +89,15 @@ public class EnemyController : MonoBehaviour {
     public void SetActiveLevel(Levels level) {
         ActiveLevel = level;
     }
+
+	void OnCollisionEnter2D(Collision2D other){
+
+		RubyController player = other.gameObject.GetComponent<RubyController>();
+
+		if (player != null){
+
+			player.ChangeHealth(-1);
+		}
+	}
+
 }

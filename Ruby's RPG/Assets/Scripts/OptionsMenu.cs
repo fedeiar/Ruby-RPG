@@ -7,13 +7,12 @@ public class OptionsMenu : MonoBehaviour
 {
     private AudioSource music;
     private Slider slider;
-    public RubyController Ruby;
-
+	private LoadOnceAndForever manager;
 
     private void OnEnable() {
         music = GameObject.Find("BackgroundMusic").GetComponent<AudioSource>();
 
-        Debug.Log("enabled slider");
+        manager = GameObject.Find("ObjectManager").GetComponent<LoadOnceAndForever>();
         slider = GameObject.Find("VolumeSlider").GetComponent<Slider>();
         slider.value = music.volume;
     }
@@ -23,7 +22,6 @@ public class OptionsMenu : MonoBehaviour
     }
 
     public void DeleteData() {
-        PlayerData data = Ruby.NewRuby();
-        SaveSystem.SavePlayer(data);
+		manager.DeleteData();
     }
 }   

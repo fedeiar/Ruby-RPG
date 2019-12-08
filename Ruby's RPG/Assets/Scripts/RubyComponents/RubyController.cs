@@ -173,13 +173,8 @@ public class RubyController : MonoBehaviour {
     
         currentLevel = data.level;
         currentExperience = data.experience;
+		expSlider.value = currentExperience;
         
-    }
-
-    public PlayerData NewRuby() {
-        currentLevel = 0;
-        currentExperience = 0;
-        return new PlayerData(this);
     }
 
 }

@@ -65,11 +65,10 @@
     <Compile Include="Assets\Scripts\Button.cs" />
     <Compile Include="Assets\Scripts\DamageZone.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyController.cs" />
-    <Compile Include="Assets\Scripts\Enemies\EnemyIE.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyStrategy.cs" />
+    <Compile Include="Assets\Scripts\Enemies\StratMove.cs" />
     <Compile Include="Assets\Scripts\HealthCollectible.cs" />
     <Compile Include="Assets\Scripts\InitialGO.cs" />
-    <Compile Include="Assets\Scripts\Levels\Level01.cs" />
-    <Compile Include="Assets\Scripts\Levels\Level02.cs" />
     <Compile Include="Assets\Scripts\Levels\Levels.cs" />
     <Compile Include="Assets\Scripts\LoadOnceAndForever.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />

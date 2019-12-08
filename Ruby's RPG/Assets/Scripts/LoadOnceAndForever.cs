@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
  /*
- * The object that carries this script is the responsible to keep alive between scenes the child objects that it has, and to destroy them in the main menu.
+ * The object that carries this script is the responsible to keep alive between scenes the child objects that it has, and to deactivate them in the main menu.
  * These child objects are objects that are present in every scene(level) except in the MainMenu
  */ 
 public class LoadOnceAndForever : MonoBehaviour
@@ -17,20 +17,20 @@ public class LoadOnceAndForever : MonoBehaviour
     //we use Awake() so it executes before OnLevelWasLoaded(...)
     void Awake()
     {
-        if (false) { 
-}
+     
         if (!DontLoadAgain) {
 
             DontDestroyOnLoad(this.gameObject);
 
+			PlayerData data;
             if (SaveSystem.FileExists()) {
-                PlayerData data = SaveSystem.LoadPlayer();
-                Ruby.LoadRuby(data);
+                data = SaveSystem.LoadPlayer();
             }
             else {
-                PlayerData data = Ruby.NewRuby();
+                data = new PlayerData();
                 SaveSystem.SavePlayer(data);
             }
+			Ruby.LoadRuby(data);
             Children = getFirstChildren(this.gameObject);
 
 
@@ -45,14 +45,7 @@ public class LoadOnceAndForever : MonoBehaviour
             DestroyImmediate(this.gameObject);
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    
+ 
 
     private void OnLevelWasLoaded(int level) {
         
@@ -71,6 +64,12 @@ public class LoadOnceAndForever : MonoBehaviour
         PlayerData data = Ruby.RubyData();
         SaveSystem.SavePlayer(data);
     }
+
+	public void DeleteData(){ 
+		PlayerData newData = SaveSystem.DeleteData();
+		Ruby.LoadRuby(newData);
+	}
+
 
     private GameObject[] getFirstChildren(GameObject parent) {
         Transform[] allObjects = parent.GetComponentsInChildren<Transform>(); //warning: it includes the parent gameobject too

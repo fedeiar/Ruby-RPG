@@ -36,16 +36,20 @@ public static class SaveSystem
         }
 
     }
-
-    
+     
 
     public static bool FileExists() {
         string path = Application.persistentDataPath + "/RubyData.binary";
         return File.Exists(path);
     }
 
-    public static void DeleteData() {
+    public static PlayerData DeleteData() {
         string path = Application.persistentDataPath + "/RubyData.binary";
         File.Delete(path);
+		PlayerData data = new PlayerData();
+		SavePlayer(data);
+		return data;
     }
+
+
 }
