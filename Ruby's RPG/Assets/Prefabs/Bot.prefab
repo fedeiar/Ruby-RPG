@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7505420380370347706}
   - component: {fileID: 8098889820551199134}
   - component: {fileID: -1704122994777967352}
-  - component: {fileID: 7061941138107557438}
   - component: {fileID: 8672037724420410013}
-  m_Layer: 0
+  - component: {fileID: 777805875927262311}
+  m_Layer: 13
   m_Name: Bot
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.055278063, y: 0.5186337}
+  m_Offset: {x: -0.07673162, y: 0.8172959}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.83906996, y: 0.96307063}
+  m_Size: {x: 0.8991262, y: 1.560395}
   m_EdgeRadius: 0
 --- !u!50 &8098889820551199134
 Rigidbody2D:
@@ -151,22 +151,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7061941138107557438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8524238084133761828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c43fe01046fd61468b6c5b61fe5f8ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  vertical: 1
-  changeTime: 0.7
-  smokeEffect: {fileID: 3733317775114186926}
 --- !u!82 &8672037724420410013
 AudioSource:
   m_ObjectHideFlags: 0
@@ -263,6 +247,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &777805875927262311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8524238084133761828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe295e3a88640ba42993ef92289a1df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  changeTime: 2.5
+  vertical: 0
+  sideways: 0
+  smokeEffect: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
+    type: 3}
+  fixClip: {fileID: 8300000, guid: e7fa1971a86d60945bb64585c0ac14d5, type: 3}
 --- !u!1001 &434275524404951822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -350,12 +353,6 @@ PrefabInstance:
 --- !u!4 &8862625492053770868 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9005094394782710138, guid: 1e7135919d09e704db712eae370f9cc1,
-    type: 3}
-  m_PrefabInstance: {fileID: 434275524404951822}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &3733317775114186926 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
     type: 3}
   m_PrefabInstance: {fileID: 434275524404951822}
   m_PrefabAsset: {fileID: 0}

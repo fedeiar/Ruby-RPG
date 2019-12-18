@@ -6,18 +6,20 @@ using UnityEngine.UI;
 public class RubyController : MonoBehaviour {
 
     private float speed = 3.0f;
-    //---
+	
+
     public const int maxHealth = 5;
-    private float timeInvincible = 2.0f;
     private int currentHealth;
     public int health {
         get {
             return currentHealth;
         }
     }
+
+	private float timeInvincible = 2.0f;
     private bool isInvincible;
     private float invincibleTimer;
-    //---
+    //-------
 
     public Slider expSlider;
 
@@ -35,15 +37,24 @@ public class RubyController : MonoBehaviour {
     }
 
     private float maxExperience;
-    //---
+    //------
 
     public GameObject projectilePrefab;
-    //---
+	private float shoot_timer;
+	private const float shoot_time = 0.3f;
+
+    public GameObject defeatCanvas;
+	public AudioClip hitClip;
+	
+	//------
 
     private Rigidbody2D rigidbody2d;
     private Animator animator;
     private Vector2 lookDirection = new Vector2(1, 0);
     private AudioSource audioSource;
+
+	private Vector2 initial_position;
+	//---------------------------------------------------------------------------------------------------------
 
     // Start is called before the first frame update
     void Start() {
@@ -57,17 +68,20 @@ public class RubyController : MonoBehaviour {
         maxExperience = expSlider.maxValue;
 
         expSlider.value = currentExperience;
+
+		initial_position = rigidbody2d.position;
+
+		shoot_timer = shoot_time;
     }
 
+	//------------------------------------------------------------------------------------------------------------
+	
     public void PlaySound(AudioClip clip) {
         audioSource.PlayOneShot(clip);
     }
-
+	
     // Update is called once per frame
     void Update() {
-
-        
-
 
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -87,6 +101,7 @@ public class RubyController : MonoBehaviour {
 
         Vector2 position = rigidbody2d.position;
 
+		
         position = position + move * speed * Time.deltaTime;
 
 
@@ -103,8 +118,10 @@ public class RubyController : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.C)) {
+		shoot_timer -= Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.C) && (shoot_timer < 0) ) {
             Launch();
+			shoot_timer = shoot_time;
         }
 
         if (isInvincible) {
@@ -121,14 +138,23 @@ public class RubyController : MonoBehaviour {
 
         if (amount < 0) {
             animator.SetTrigger("Hit");
+			
             if (isInvincible)
                 return;
 
+			
             isInvincible = true;
             invincibleTimer = timeInvincible;
-        }
+			PlaySound(hitClip);
+		}
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+
+		if(currentHealth == 0){
+			
+			this.GetComponent<RubyController>().enabled = false;
+			defeatCanvas.SetActive(true);
+		}
 
         UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
 
@@ -138,6 +164,7 @@ public class RubyController : MonoBehaviour {
         GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
 
         Projectile projectile = projectileObject.GetComponent<Projectile>();
+		
         projectile.Launch(lookDirection, 300);
 
         animator.SetTrigger("Launch");
@@ -146,16 +173,14 @@ public class RubyController : MonoBehaviour {
 
     public void AddExperience(float xp) {
 
-        Debug.Log("XP received: " + xp);
-        Debug.Log("Before: " + currentExperience);
+        
         if (currentExperience + xp >= maxExperience) {
             LevelUp();
             currentExperience = xp - (maxExperience - currentExperience);
         }
         else
             currentExperience += xp;
-        Debug.Log("After: " + currentExperience);
-
+        
 
         expSlider.value = currentExperience;
     }
@@ -176,5 +201,10 @@ public class RubyController : MonoBehaviour {
 		expSlider.value = currentExperience;
         
     }
+
+	public void ResetPosition(){
+		if(rigidbody2d != null) //because of the first call (when ruby appears for the first time) before start()
+			rigidbody2d.position = initial_position;
+	}
 
 }

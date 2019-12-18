@@ -9,8 +9,20 @@ public class Levels : MonoBehaviour
 
     protected int enemies;
 
-    private void OnLevelWasLoaded(int level)
+	public GameObject panel_victory;
+	public AudioClip victoryClip;
+
+	private AudioSource audioSource;
+	//---------------------------------------
+
+	private void Start(){
+		audioSource = GetComponent<AudioSource>();
+	}
+
+	private void OnLevelWasLoaded(int level)
     {
+		
+		
 		if(level != SceneNumber.Menu){ 
 			enemies = 0;
         
@@ -29,20 +41,36 @@ public class Levels : MonoBehaviour
     public void EnemyFixed() {
         enemies--;
         if (enemies == 0) {
-			if(SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - 1)
-				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+			if(SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - 1){ 
+				StartCoroutine(VictoryPanel(3f));
+			}
 			else{
-				VictoryPanel();
-				Debug.Log("Victory!");
+				Debug.Log("No more scenes to load");
 			}
 
         }
 
     }
 
+	public IEnumerator VictoryPanel(float pauseTime){
+		
+		
+		panel_victory.SetActive(true);
+		audioSource.PlayOneShot(victoryClip);
 
-    private void VictoryPanel() {
-        //TO-DO
-        
-    }
+		Time.timeScale = 0f;
+		float pauseEndTime = Time.realtimeSinceStartup + pauseTime;
+		while (Time.realtimeSinceStartup < pauseEndTime) {
+			yield return 0;
+		}
+		Time.timeScale = 1f;
+
+		panel_victory.SetActive(false);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		
+		
+	}
+
+	
+	
 }

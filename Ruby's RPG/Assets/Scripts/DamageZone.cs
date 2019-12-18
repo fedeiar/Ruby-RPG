@@ -12,6 +12,11 @@ public class DamageZone : MonoBehaviour
         {
             r_health.ChangeHealth(-1);
         }
+
+		RubyProjectile r_projectile = other.GetComponent<RubyProjectile>();
+
+		if(r_projectile != null)
+			r_projectile.SelfDestroy();
     }
 
 }

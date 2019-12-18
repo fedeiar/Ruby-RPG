@@ -59,6 +59,7 @@ public class LoadOnceAndForever : MonoBehaviour
             foreach (GameObject child in Children) {
                 child.SetActive(true);
             }
+			Ruby.ResetPosition();
         }
 
         PlayerData data = Ruby.RubyData();

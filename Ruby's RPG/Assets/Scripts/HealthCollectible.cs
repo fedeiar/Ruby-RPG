@@ -8,7 +8,7 @@ public class HealthCollectible : MonoBehaviour {
     public AudioClip collectedClip;
 
     void OnTriggerEnter2D(Collider2D other){
-
+		
         RubyController r_health = other.GetComponent<RubyController>();
 
         if (r_health != null){
