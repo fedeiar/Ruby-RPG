@@ -8,7 +8,7 @@ public abstract class EnemyController : MonoBehaviour {
 	public float changeTime;
 	public bool vertical;
 	public bool sideways;
-	
+	public bool down_left; //decides whether starts moving to down in case of vertical or to left in case of sideways
     
     public ParticleSystem smokeEffect;
 	public AudioClip fixClip;

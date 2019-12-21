@@ -22,7 +22,8 @@ public class RubyController : MonoBehaviour {
     //-------
 
     public Slider expSlider;
-
+	public TMPro.TextMeshProUGUI levelText;
+	
     private float currentExperience;
     public float experience {
         get {
@@ -68,10 +69,12 @@ public class RubyController : MonoBehaviour {
         maxExperience = expSlider.maxValue;
 
         expSlider.value = currentExperience;
+		levelText.text = ""+currentLevel;
 
 		initial_position = rigidbody2d.position;
 
 		shoot_timer = shoot_time;
+		
     }
 
 	//------------------------------------------------------------------------------------------------------------
@@ -187,6 +190,7 @@ public class RubyController : MonoBehaviour {
 
     private void LevelUp() {
         currentLevel++;
+		levelText.text = ""+currentLevel;
     }
 
     public PlayerData RubyData() {
@@ -199,6 +203,7 @@ public class RubyController : MonoBehaviour {
         currentLevel = data.level;
         currentExperience = data.experience;
 		expSlider.value = currentExperience;
+		levelText.text = ""+currentLevel;
         
     }
 

@@ -12,6 +12,8 @@ public abstract class EnemyStrategy {
 
 	protected float timer;
 	protected int direction;
+
+	protected int orientation;
 	//-------------
 
 	public EnemyStrategy(EnemyController e){
@@ -23,6 +25,8 @@ public abstract class EnemyStrategy {
 		animator = enemy.GetComponent<Animator>();
 		direction = 0;
 		timer = enemy.changeTime;
+
+		orientation = enemy.down_left ? -1 : 1;
 	}
 
 
@@ -31,6 +35,8 @@ public abstract class EnemyStrategy {
 
 
 	protected void standardMovement(){
+		
+
 		if (enemy.sideways){
 			moveSideways();
 		}
@@ -53,14 +59,14 @@ public abstract class EnemyStrategy {
 
 		if(direction == 0){ //hacia arriba
 			animator.SetFloat("Move X", 0);
-            animator.SetFloat("Move Y", 1);
-            position.y = position.y + Time.deltaTime * enemy.speed * 1;
+            animator.SetFloat("Move Y", orientation);
+            position.y = position.y + Time.deltaTime * enemy.speed * orientation;
 		}
 
 		if(direction == 1){ //hacia abajo
 			animator.SetFloat("Move X", 0);
-            animator.SetFloat("Move Y", -1);
-            position.y = position.y + Time.deltaTime * enemy.speed * -1;
+            animator.SetFloat("Move Y", -orientation);
+            position.y = position.y + Time.deltaTime * enemy.speed * -orientation;
 		}
 
 		rigidbody.MovePosition(position);
@@ -74,17 +80,18 @@ public abstract class EnemyStrategy {
 		}
 
 		Vector2 position = rigidbody.position;
+		
 
 		if(direction == 0){ //hacia la derecha
-		    animator.SetFloat("Move X", 1);
+		    animator.SetFloat("Move X", orientation);
             animator.SetFloat("Move Y", 0);
-            position.x = position.x + Time.deltaTime * enemy.speed * 1;
+            position.x = position.x + Time.deltaTime * enemy.speed * orientation;
 		}
 
 		if(direction == 1){ //hacia la izquierda
-            animator.SetFloat("Move X", -1);
+            animator.SetFloat("Move X", -orientation);
             animator.SetFloat("Move Y", 0);
-            position.x = position.x + Time.deltaTime * enemy.speed * -1;
+            position.x = position.x + Time.deltaTime * enemy.speed * -orientation;
 		}
 
 		rigidbody.MovePosition(position);
@@ -102,23 +109,23 @@ public abstract class EnemyStrategy {
 
 		if(direction == 3){ //hacia arriba
 			animator.SetFloat("Move X", 0);
-            animator.SetFloat("Move Y", 1);
-            position.y = position.y + Time.deltaTime * enemy.speed * 1;
+            animator.SetFloat("Move Y", orientation);
+            position.y = position.y + Time.deltaTime * enemy.speed * orientation;
 		}
 		if(direction == 0){ //hacia la derecha
-		    animator.SetFloat("Move X", 1);
+		    animator.SetFloat("Move X", orientation);
             animator.SetFloat("Move Y", 0);
-            position.x = position.x + Time.deltaTime * enemy.speed * 1;
+            position.x = position.x + Time.deltaTime * enemy.speed * orientation;
 		}
 		if(direction == 1){ //hacia abajo
 			animator.SetFloat("Move X", 0);
-            animator.SetFloat("Move Y", -1);
-            position.y = position.y + Time.deltaTime * enemy.speed * -1;
+            animator.SetFloat("Move Y", -orientation);
+            position.y = position.y + Time.deltaTime * enemy.speed * -orientation;
 		}
 		if(direction == 2){ //hacia la izquierda
-            animator.SetFloat("Move X", -1);
+            animator.SetFloat("Move X", -orientation);
             animator.SetFloat("Move Y", 0);
-            position.x = position.x + Time.deltaTime * enemy.speed * -1;
+            position.x = position.x + Time.deltaTime * enemy.speed * -orientation;
 		}
 
 		rigidbody.MovePosition(position);

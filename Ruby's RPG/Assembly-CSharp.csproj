@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Button.cs" />
     <Compile Include="Assets\Scripts\DamageZone.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyShooter.cs" />
@@ -80,8 +79,6 @@
     <Compile Include="Assets\Scripts\Menues\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Menues\VictoryMenu.cs" />
     <Compile Include="Assets\Scripts\NonPlayerCharacter.cs" />
-    <Compile Include="Assets\Scripts\Not used\DontDestroyEvent.cs" />
-    <Compile Include="Assets\Scripts\Not used\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\Projectiles\EnemyProjectile.cs" />
     <Compile Include="Assets\Scripts\Projectiles\Projectile.cs" />
     <Compile Include="Assets\Scripts\Projectiles\RubyProjectile.cs" />

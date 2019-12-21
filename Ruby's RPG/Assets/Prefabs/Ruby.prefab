@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expSlider: {fileID: 0}
+  levelText: {fileID: 0}
   projectilePrefab: {fileID: 693723506700927394, guid: 9d5ee7fa11ebdf5499e10f7b33f36423,
     type: 3}
   defeatCanvas: {fileID: 5588307007633238391}

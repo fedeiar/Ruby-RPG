@@ -263,8 +263,7 @@ MonoBehaviour:
   changeTime: 2.5
   vertical: 0
   sideways: 0
-  smokeEffect: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
-    type: 3}
+  smokeEffect: {fileID: 8976524052253581584}
   fixClip: {fileID: 8300000, guid: e7fa1971a86d60945bb64585c0ac14d5, type: 3}
   projectilePrefab: {fileID: 151985861036824198, guid: d96132c9341086742b65de450771e024,
     type: 3}
@@ -356,6 +355,12 @@ PrefabInstance:
 --- !u!4 &3864707786921857994 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9005094394782710138, guid: 1e7135919d09e704db712eae370f9cc1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5285738209648290480}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8976524052253581584 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
     type: 3}
   m_PrefabInstance: {fileID: 5285738209648290480}
   m_PrefabAsset: {fileID: 0}
