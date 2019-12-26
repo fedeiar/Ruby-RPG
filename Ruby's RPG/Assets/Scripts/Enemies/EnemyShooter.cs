@@ -12,6 +12,10 @@ public class EnemyShooter : EnemyController {
     new protected void Start(){
         base.Start();
 		intelligence = new StratShoot(this, projectilePrefab);
+
+		if(speed <= 0){
+			animator.enabled = false;
+		}
     }
 
     // Update is called once per frame
@@ -19,4 +23,10 @@ public class EnemyShooter : EnemyController {
     {
         base.Update();
     }
+
+	public override void Fix(){
+		Debug.Log("executing?");
+		animator.enabled = true;
+		base.Fix();
+	}
 }

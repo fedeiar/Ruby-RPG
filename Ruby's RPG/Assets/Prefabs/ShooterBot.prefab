@@ -30,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4111857874871788186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.764272, y: -9.181936, z: 0}
-  m_LocalScale: {x: 0.8723661, y: 0.9119191, z: 1.26}
+  m_LocalPosition: {x: 13.427, y: -9.181936, z: 0}
+  m_LocalScale: {x: 0.7055848, y: 0.90604347, z: 1.4489369}
   m_Children:
   - {fileID: 3864707786921857994}
   m_Father: {fileID: 0}
@@ -102,7 +102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 2.56, y: 2.56}
+    oldSize: {x: 1.939394, y: 1.939394}
     newSize: {x: 2.56, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -263,6 +263,7 @@ MonoBehaviour:
   changeTime: 2.5
   vertical: 0
   sideways: 0
+  down_left: 0
   smokeEffect: {fileID: 8976524052253581584}
   fixClip: {fileID: 8300000, guid: e7fa1971a86d60945bb64585c0ac14d5, type: 3}
   projectilePrefab: {fileID: 151985861036824198, guid: d96132c9341086742b65de450771e024,
@@ -279,21 +280,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SmokeEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
-        type: 3}
-      propertyPath: moveWithTransform
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
-        type: 3}
-      propertyPath: EmissionModule.rateOverDistance.scalar
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9005094394782710138, guid: 1e7135919d09e704db712eae370f9cc1,
         type: 3}
@@ -348,6 +334,21 @@ PrefabInstance:
     - target: {fileID: 9005094394782710138, guid: 1e7135919d09e704db712eae370f9cc1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
+        type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

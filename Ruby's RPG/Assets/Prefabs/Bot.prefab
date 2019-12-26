@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 8524238084133761828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.05, y: -1.52, z: 0}
-  m_LocalScale: {x: 0.8723661, y: 0.9119191, z: 1.26}
+  m_LocalScale: {x: 0.8858092, y: 0.92597175, z: 1.2794166}
   m_Children:
   - {fileID: 8862625492053770868}
   m_Father: {fileID: 0}
@@ -263,6 +263,7 @@ MonoBehaviour:
   changeTime: 2.5
   vertical: 0
   sideways: 0
+  down_left: 0
   smokeEffect: {fileID: 3733317775114186926}
   fixClip: {fileID: 8300000, guid: e7fa1971a86d60945bb64585c0ac14d5, type: 3}
 --- !u!1001 &434275524404951822
@@ -276,21 +277,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SmokeEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
-        type: 3}
-      propertyPath: moveWithTransform
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
-        type: 3}
-      propertyPath: EmissionModule.rateOverDistance.scalar
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9005094394782710138, guid: 1e7135919d09e704db712eae370f9cc1,
         type: 3}
@@ -345,6 +331,21 @@ PrefabInstance:
     - target: {fileID: 9005094394782710138, guid: 1e7135919d09e704db712eae370f9cc1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875826820613442464, guid: 1e7135919d09e704db712eae370f9cc1,
+        type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

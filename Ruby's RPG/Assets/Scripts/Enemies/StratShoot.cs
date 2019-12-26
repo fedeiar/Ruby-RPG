@@ -18,13 +18,17 @@ public class StratShoot : EnemyStrategy
 		enemy = e;
 		shoot_timer = shoot_time;
 		projectilePrefab = projectile;
+
+		
 	}
 
 
 	//-----------
 	public override void action(){ 
-	
+
+
 		standardMovement();
+		
 
 		shoot_timer -= Time.deltaTime;
 

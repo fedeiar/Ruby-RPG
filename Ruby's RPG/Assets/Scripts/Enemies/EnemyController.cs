@@ -55,7 +55,7 @@ public abstract class EnemyController : MonoBehaviour {
     }
 
     //public because we want to call it from elsewhere like the projectile script
-    public void Fix()
+    public virtual void Fix()
     {
         broken = false;
         rigidbody2D.simulated = false;
